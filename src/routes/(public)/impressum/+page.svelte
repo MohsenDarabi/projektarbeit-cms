@@ -6,34 +6,27 @@
 			<section>
 				<h2 class="text-xl font-bold text-gray-900">Angaben gemäß § 5 TMG</h2>
 				<p class="mt-4">
-					Max Mustermann<br />
-					Musterstraße 123<br />
-					12345 Musterstadt
+					Mehdi Ranjbar<br />
+					Hansa Homerenovierung<br />
+					Poggenpool 15<br />
+					22549 Hamburg
 				</p>
 			</section>
 
 			<section>
 				<h2 class="text-xl font-bold text-gray-900">Kontakt</h2>
 				<p class="mt-4">
-					Telefon: +49 (0) 123 456789<br />
-					E-Mail: info@unternehmensname.de
-				</p>
-			</section>
-
-			<section>
-				<h2 class="text-xl font-bold text-gray-900">Umsatzsteuer-ID</h2>
-				<p class="mt-4">
-					Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-					DE123456789
+					Telefon: 0176 34374285<br />
+					E-Mail: info@hansa-homerenovierung.com
 				</p>
 			</section>
 
 			<section>
 				<h2 class="text-xl font-bold text-gray-900">Redaktionell verantwortlich</h2>
 				<p class="mt-4">
-					Max Mustermann<br />
-					Musterstraße 123<br />
-					12345 Musterstadt
+					Mehdi Ranjbar<br />
+					Poggenpool 15<br />
+					22549 Hamburg
 				</p>
 			</section>
 
