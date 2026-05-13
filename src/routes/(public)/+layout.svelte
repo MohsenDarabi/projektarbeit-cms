@@ -13,7 +13,7 @@
 		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 			<div class="flex h-16 justify-between items-center">
 				<div class="flex items-center">
-					<a href="/" class="text-xl font-bold text-indigo-600">UnternehmensName</a>
+					<a href="/" class="text-xl font-bold text-indigo-600">Hansa Homerenovierung</a>
 				</div>
 				<!-- Desktop Menu -->
 				<div class="hidden md:block">
@@ -62,11 +62,12 @@
 	<footer class="border-t bg-gray-50 py-12">
 		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
 			<p class="text-sm text-gray-500">
-				&copy; {new Date().getFullYear()} UnternehmensName. Alle Rechte vorbehalten.
+				&copy; {new Date().getFullYear()} Hansa Homerenovierung. Alle Rechte vorbehalten.
 			</p>
 			<div class="mt-4 flex justify-center space-x-6 text-sm text-gray-500">
 				<a href="/impressum" class="hover:text-gray-900">Impressum</a>
 				<a href="/datenschutz" class="hover:text-gray-900">Datenschutz</a>
+				<a href="/login" class="hover:text-gray-900 border-l pl-6">Admin</a>
 			</div>
 		</div>
 	</footer>
