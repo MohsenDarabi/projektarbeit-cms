@@ -47,7 +47,7 @@ Die Website basiert auf **SvelteKit** mit dem **Node-Adapter**.
 Das Kontaktformular nutzt Gmail als SMTP-Relay, um sicherzustellen, dass E-Mails zuverlässig ankommen.
 
 - **Mail-Server:** `smtp.gmail.com` (Port 587)
-- **Absender-Konto:** `ee.to.ba.man@gmail.com`
+- **Absender-Konto:** `ddddmmmm884@gmail.com`
 - **Authentifizierung:** Ein spezielles Google "App-Passwort" (16-stellig) wird verwendet.
 - **Empfänger (Inhaber):** `mohsenturkey12@gmail.com`
 
