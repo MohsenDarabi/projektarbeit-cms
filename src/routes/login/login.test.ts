@@ -26,7 +26,7 @@ describe('Login Actions', () => {
 
 		const result = await actions.login(event);
 		expect(result.status).toBe(400);
-		expect(result.data.message).toBe('Username and password are required');
+		expect(result.data.message).toBe('Bitte Benutzername und Passwort eingeben.');
 	});
 
 	it('should redirect to /admin on successful login', async () => {
