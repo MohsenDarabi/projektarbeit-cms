@@ -1,0 +1,30 @@
+graph TD
+    subgraph "Client Tier"
+        Browser["<<device>><br/>Webbrowser<br/>(Smartphone/PC)"]
+    end
+
+    subgraph "Server Tier (Oracle Cloud Infrastructure)"
+        subgraph "Oracle VPS (Ubuntu Linux Node)"
+            subgraph "Web Server Execution Environment"
+                Nginx["<<service>><br/>Nginx Reverse Proxy"]
+                SSL["<<artifact>><br/>Let's Encrypt Cert"]
+            end
+            
+            subgraph "App Server Execution Environment"
+                Node["<<executionEnvironment>><br/>Node.js Runtime"]
+                SvelteKit["<<artifact>><br/>SvelteKit App"]
+                PM2["<<service>><br/>PM2 Process Manager"]
+            end
+            
+            DB[("<<database>><br/>SQLite File<br/>(local.db)")]
+        end
+    end
+
+    subgraph "External Services"
+        Gmail["<<service>><br/>Gmail SMTP"]
+    end
+
+    Browser -- "HTTPS (TLS)" --> Nginx
+    Nginx -- "Localhost Proxy (3000)" --> SvelteKit
+    SvelteKit -- "File System API" --> DB
+    SvelteKit -- "SMTP (587)" --> Gmail

@@ -1,0 +1,27 @@
+graph LR
+    subgraph Akteure
+        User["Website-Besucher"]
+        Admin["Administrator<br/>(Mehdi Ranjbar)"]
+    end
+
+    subgraph "Anwendungsfälle (Hansa CMS)"
+        UC1((Startseite &<br/>Infos ansehen))
+        UC2((Leistungen<br/>durchsuchen))
+        UC3((Referenzen<br/>betrachten))
+        UC4((Kontaktanfrage<br/>senden))
+        UC5((Admin-Login<br/>durchführen))
+        UC6((Leistungen<br/>verwalten))
+        UC7((Projekte<br/>verwalten))
+    end
+
+    User --> UC1
+    User --> UC2
+    User --> UC3
+    User --> UC4
+    
+    Admin --> UC5
+    Admin --> UC6
+    Admin --> UC7
+    
+    UC6 -.->|includes| UC5
+    UC7 -.->|includes| UC5

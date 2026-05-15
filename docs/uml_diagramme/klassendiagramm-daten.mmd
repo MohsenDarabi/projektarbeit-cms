@@ -1,0 +1,33 @@
+classDiagram
+    class User {
+        +string id
+        +string username
+        +string password_hash
+    }
+    
+    class Session {
+        +string id
+        +string user_id
+        +integer expires_at
+    }
+    
+    class Service {
+        +string id
+        +string title
+        +string description
+        +string slug
+        +string image_path
+        +integer order
+    }
+    
+    class Project {
+        +string id
+        +string title
+        +string client
+        +string description
+        +string image_path
+        +string date
+        +string tags
+    }
+
+    User "1" -- "0..*" Session : manages
