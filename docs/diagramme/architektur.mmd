@@ -1,0 +1,20 @@
+graph TD
+    Client["Kunde / Admin<br/>(Webbrowser)"] -->|"HTTPS / Port 443"| OCI["Oracle Cloud Instanz"]
+    
+    subgraph OCI ["Oracle VPS (Ubuntu)"]
+        FW["Firewall / iptables"]
+        Nginx["Nginx Reverse Proxy<br/>+ SSL Zertifikat"]
+        
+        subgraph App ["SvelteKit Applikation"]
+            Node["Node.js Server<br/>(verwaltet von PM2)"]
+        end
+        
+        DB[("SQLite Datenbank<br/>'local.db'")]
+        
+        FW --> Nginx
+        Nginx -->|"Proxy Pass<br/>http://localhost:3000"| Node
+        Node <-->|"Drizzle ORM"| DB
+    end
+    
+    Node -->|"SMTP / Port 587"| Gmail["Gmail SMTP Server"]
+    Gmail -->|"Email Zustellung"| Owner["Inhaber Inbox"]

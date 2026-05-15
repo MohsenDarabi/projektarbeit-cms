@@ -1,0 +1,33 @@
+erDiagram
+    user {
+        string id PK
+        string username "UNIQUE"
+        string password_hash
+    }
+    
+    session {
+        string id PK
+        string user_id FK
+        integer expires_at
+    }
+    
+    service {
+        string id PK
+        string title
+        string description
+        string slug "UNIQUE"
+        string image_path
+        integer order
+    }
+    
+    project {
+        string id PK
+        string title
+        string client
+        string description
+        string image_path
+        string date
+        string tags
+    }
+
+    user ||--o{ session : "hat"

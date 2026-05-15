@@ -1,0 +1,27 @@
+sequenceDiagram
+    actor User as Website Besucher
+    participant Browser
+    participant SvelteKit as Server (SvelteKit)
+    participant SMTP as Gmail (Nodemailer)
+    actor Owner as Inhaber (E-Mail)
+
+    User->>Browser: Füllt Kontaktformular aus & klickt Senden
+    Browser->>SvelteKit: POST /kontakt (Name, Email, Nachricht)
+    
+    rect rgb(240, 240, 255)
+        note right of SvelteKit: Validierung
+        SvelteKit->>SvelteKit: checkKontaktForm(payload)
+    end
+    
+    alt Daten ungültig
+        SvelteKit-->>Browser: 400 Bad Request (Fehlermeldungen)
+        Browser-->>User: Zeigt rote Warnungen am Feld
+    else Daten gültig
+        SvelteKit->>SMTP: SMTP Auth (App-Passwort)
+        SMTP-->>SvelteKit: Auth OK
+        SvelteKit->>SMTP: Sende E-Mail
+        SMTP->>Owner: Zustellung der E-Mail ins Postfach
+        SMTP-->>SvelteKit: Sendestatus OK
+        SvelteKit-->>Browser: 200 OK (Success: true)
+        Browser-->>User: Zeigt grüne Erfolgsmeldung
+    end
