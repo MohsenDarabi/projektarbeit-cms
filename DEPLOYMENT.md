@@ -76,4 +76,26 @@ Falls du Änderungen am Code machst und diese auf den Server spielen willst:
    ```
 
 ---
+
+## 6. Backup & Recovery (Lokales Backup)
+
+Um die Daten der Website (Datenbank und Bilder) vor einem Serververlust zu schützen, gibt es ein automatisches Skript für den Mac.
+
+### Nutzung des Backup-Skripts
+Das Skript lädt die `local.db`, die Bilder und die `.env` Datei in einen lokalen Ordner herunter.
+
+1.  Öffne das Terminal auf deinem Mac im Projektordner.
+2.  Führe das Skript aus:
+    ```bash
+    bash scripts/backup.sh
+    ```
+3.  Die Backups werden im Ordner `backups/` mit einem Zeitstempel gespeichert (z.B. `backups/2026-05-13_14-30-00`).
+
+### Wiederherstellung (Recovery)
+Sollte der Server neu aufgesetzt werden müssen:
+1.  Code via Git klonen.
+2.  Die Dateien `local.db`, `.env` und den Inhalt von `static/uploads/` aus dem aktuellsten Backup-Ordner zurück auf den Server kopieren.
+3.  Die App wie gewohnt bauen und starten.
+
+---
 *Erstellt am 13. Mai 2026 für Hansa Homerenovierung.*
